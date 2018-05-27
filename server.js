@@ -72,8 +72,6 @@ function gateKeeper(req, res, next) {
   const userObj = queryString.parse(userString);
   USERS.forEach((item,index) => { 
           if (item.userName === userObj.user && item.password === userObj.pass){
-            console.log("found");
-            console.log(USERS[index]);
             req.user = USERS[index];
           }
       });
